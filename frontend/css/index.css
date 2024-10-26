@@ -1,0 +1,327 @@
+/* Header and Navigation */
+header {
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md) 0;
+}
+
+.logo {
+    color: var(--text-light);
+    font-size: var(--font-size-xl);
+}
+
+nav {
+    position: relative;
+}
+
+/* Base Navigation Styles */
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: var(--spacing-lg);
+}
+
+.nav-links a {
+    color: var(--text-light);
+    font-weight: bold;
+    position: relative;
+    transition: var(--transition-base);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--text-light);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a:focus::after {
+    width: 100%;
+}
+
+.nav-active {
+    display: flex;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-light);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    color: var(--text-light);
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--spacing-lg);
+}
+
+.hero p {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+.hero-buttons .btn {
+    margin: 0 var(--spacing-sm);
+    background: var(--background-light);
+    color: var(--text-primary);
+}
+
+.hero-buttons .btn:hover {
+    background: var(--background-off-white);
+}
+
+/* Services Section */
+.services {
+    text-align: center;
+}
+
+.services h2 {
+    font-size: var(--font-size-2xl);
+}
+
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    justify-items: center;
+}
+
+/* Featured Collections Section */
+.featured-collections {
+    background: var(--background-off-white);
+    text-align: center;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    justify-items: center;
+}
+
+.gallery-item {
+    flex: 1 1 calc(33% - 20px);
+    margin: var(--spacing-sm);
+    overflow: hidden;
+    border-radius: var(--border-radius-md);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: cover;
+    transition: var(--transition-base);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Testimonials Section */
+.testimonials {
+    text-align: center;
+}
+
+.testimonial-carousel {
+    max-width: 800px;
+    margin: auto;
+}
+
+.testimonial p {
+    font-size: var(--font-size-xl);
+    font-style: italic;
+}
+
+.testimonial h4 {
+    margin-top: var(--spacing-sm);
+    font-weight: normal;
+    color: var(--text-secondary);
+}
+
+/* CTA Section */
+.cta {
+    background: url('images/cta-bg.jpg') no-repeat center center/cover;
+    text-align: center;
+    color: var(--text-light);
+    position: relative;
+}
+
+.cta::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.cta .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Footer */
+footer {
+    background: var(--background-dark);
+    color: var(--text-light);
+}
+
+.footer-columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-column {
+    flex: 1;
+    margin: var(--spacing-md);
+}
+
+.footer-column ul li a {
+    color: var(--text-light);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: var(--spacing-xl);
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+}
+
+.social-icons a {
+    color: var(--primary-color);
+    font-size: var(--font-size-xl);
+    transition: var(--transition-base);
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-light);
+    margin: 5px 0;
+    transition: var(--transition-base);
+}
+
+/* Mobile Navigation Styles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 81px; /* Adjust based on your header height */
+        left: 0;
+        width: 100%;
+        height: calc(65vh - 81px);
+        background-color: var(--background-dark);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: var(--spacing-sm);
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .nav-links.nav-active {
+        transform: translateX(0);
+    }
+
+    .nav-links li {
+        margin: var(--spacing-md) 0;
+    }
+
+    .nav-links a {
+        font-size: var(--font-size-lg);
+    }
+
+    /* Hamburger Animation */
+    .hamburger.open span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+}
+
+/* Medium Screens */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .gallery-item img {
+        max-height: 200px;
+    }
+}
+
+/* Large Screens */
+@media (min-width: 1025px) {
+    .gallery-item img {
+        max-height: 250px;
+    }
+}
