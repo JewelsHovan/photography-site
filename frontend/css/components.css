@@ -30,6 +30,13 @@ nav {
 
 .nav-links li {
     margin-left: var(--spacing-lg);
+    width: 80%;
+    text-align: center;
+    padding: var(--spacing-sm) 0;
+}
+
+.nav-links li:last-child {
+    border-bottom: none;
 }
 
 .nav-links a {
@@ -109,6 +116,7 @@ footer {
     display: none;
     cursor: pointer;
     padding: 10px;
+    transition: transform 0.3s ease;
 }
 
 .hamburger span {
@@ -117,7 +125,23 @@ footer {
     height: 3px;
     background-color: var(--text-light);
     margin: 5px 0;
-    transition: var(--transition-base);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger.open {
+    transform: rotate(90deg);
+}
+
+.hamburger.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 /* Mobile Navigation Styles */
@@ -131,7 +155,7 @@ footer {
         top: 81px; /* Adjust based on your header height */
         left: 0;
         width: 100%;
-        height: calc(65vh - 81px);
+        height: calc(60vh - 81px);
         background-color: var(--background-dark);
         flex-direction: column;
         align-items: center;
@@ -147,15 +171,31 @@ footer {
 
     .nav-links li {
         margin: var(--spacing-md) 0;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-links.nav-active li {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: calc(0.1s * var(--item-index));
     }
 
     .nav-links a {
         font-size: var(--font-size-lg);
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .nav-links a:hover, .nav-links a:focus {
+        color: var(--primary-color);
+        transform: scale(1.05);
     }
 
     /* Hamburger Animation */
     .hamburger.open span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
+        transform: translateY(8px) rotate(45deg);
     }
 
     .hamburger.open span:nth-child(2) {
@@ -163,7 +203,8 @@ footer {
     }
 
     .hamburger.open span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
+        transform: translateY(-8px) rotate(-45deg);
     }
 }
+
 

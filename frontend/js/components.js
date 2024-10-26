@@ -12,11 +12,11 @@ class HeaderComponent extends HTMLElement {
                             <span></span>
                         </div>
                         <ul class="nav-links">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="#">Collections</a></li>
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li style="--item-index: 1;"><a href="index.html">Home</a></li>
+                            <li style="--item-index: 2;"><a href="about.html">About</a></li>
+                            <li style="--item-index: 3;"><a href="#">Collections</a></li>
+                            <li style="--item-index: 4;"><a href="#">Services</a></li>
+                            <li style="--item-index: 5;"><a href="#">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -77,4 +77,3 @@ class FooterComponent extends HTMLElement {
 // Register the custom elements
 customElements.define('header-component', HeaderComponent);
 customElements.define('footer-component', FooterComponent);
-
