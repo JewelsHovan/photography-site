@@ -16,7 +16,7 @@ class HeaderComponent extends HTMLElement {
                             <li style="--item-index: 2;"><a href="about.html">About</a></li>
                             <li style="--item-index: 3;"><a href="collections.html">Collections</a></li>
                             <li style="--item-index: 4;"><a href="services.html">Services</a></li>
-                            <li style="--item-index: 5;"><a href="#">Contact</a></li>
+                            <li style="--item-index: 5;"><a href="contact.html">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -48,9 +48,9 @@ class FooterComponent extends HTMLElement {
                         <div class="footer-column">
                             <h3>Quick Links</h3>
                             <ul>
-                                <li><a href="#">Collections</a></li>
-                                <li><a href="#">Services</a></li>
-                                <li><a href="#">Contact</a></li>
+                                <li><a href="collections.html">Collections</a></li>
+                                <li><a href="services.html">Services</a></li>
+                                <li><a href="contact.html">Contact</a></li>
                             </ul>
                         </div>
                         <div class="footer-column">
