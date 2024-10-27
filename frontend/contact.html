@@ -4,12 +4,11 @@
     <meta charset="UTF-8" />
     <title>Contact Us - Photography Collective</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Link to external CSS -->
+    <meta name="description" content="Get in touch with Photography Collective for your event photography needs. We specialize in sports, social events, and graduation photography.">
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/components.css" />
     <link rel="stylesheet" href="css/contact.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
   </head>
   <body>
     <!-- Header Component -->
@@ -18,8 +17,8 @@
     <!-- Hero Section -->
     <section class="contact-hero">
       <div class="container">
-        <h1>Contact Us</h1>
-        <p>We'd love to hear from you. Please fill out the form below.</p>
+        <h1>Let's Create Something Amazing</h1>
+        <p>Tell us about your event and we'll help bring your vision to life through our lens.</p>
       </div>
     </section>
 
@@ -28,96 +27,162 @@
       <div class="container">
         <div class="contact-form-container">
           <!-- Contact Form -->
-          <form id="contact-form">
+          <form id="contact-form" novalidate>
             <div class="form-group">
-              <label for="name">Name<span>*</span></label>
+              <label for="name">Full Name<span>*</span></label>
               <input
                 type="text"
                 id="name"
                 name="name"
                 required
-                placeholder="Your full name"
+                placeholder="Enter your full name"
+                aria-describedby="name-help"
               />
+              <div id="name-help" class="helper-text">Please enter your first and last name</div>
             </div>
+
             <div class="form-group">
-              <label for="email">Email<span>*</span></label>
+              <label for="email">Email Address<span>*</span></label>
               <input
                 type="email"
                 id="email"
                 name="email"
                 required
-                placeholder="Your email address"
+                placeholder="your.email@example.com"
+                aria-describedby="email-help"
               />
+              <div id="email-help" class="helper-text">We'll never share your email with anyone else</div>
             </div>
+
             <div class="form-group">
-              <label for="phone">Phone Number (Optional)</label>
+              <label for="phone">Phone Number</label>
               <input
                 type="tel"
                 id="phone"
                 name="phone"
-                placeholder="Your phone number"
+                placeholder="(123) 456-7890"
+                pattern="[\d\s\-\(\)]+"
+                aria-describedby="phone-help"
               />
+              <div id="phone-help" class="helper-text">Optional - Format: (123) 456-7890</div>
             </div>
+
             <div class="form-group">
               <label for="event-type">Event Type<span>*</span></label>
-              <select id="event-type" name="event-type" required>
-                <option value="" disabled selected>Select an event type</option>
-                <option value="sports">Sports</option>
-                <option value="social">Social Event</option>
-                <option value="graduation">Graduation</option>
-                <!-- Add more options as needed -->
+              <select id="event-type" name="event-type" required aria-describedby="event-type-help">
+                <option value="" disabled selected>Choose your event type</option>
+                <optgroup label="Sports Events">
+                  <option value="team-sports">Team Sports</option>
+                  <option value="individual-sports">Individual Sports</option>
+                  <option value="tournaments">Tournaments</option>
+                </optgroup>
+                <optgroup label="Social Events">
+                  <option value="wedding">Wedding</option>
+                  <option value="birthday">Birthday</option>
+                  <option value="corporate">Corporate Event</option>
+                </optgroup>
+                <optgroup label="Academic Events">
+                  <option value="graduation">Graduation</option>
+                  <option value="school-event">School Event</option>
+                </optgroup>
+                <option value="other">Other</option>
               </select>
+              <div id="event-type-help" class="helper-text">Select the type that best matches your event</div>
             </div>
+
             <div class="form-group">
               <label for="event-date">Event Date<span>*</span></label>
-              <input type="date" id="event-date" name="event-date" required />
+              <input 
+                type="date" 
+                id="event-date" 
+                name="event-date" 
+                required 
+                min=""
+                aria-describedby="date-help"
+              />
+              <div id="date-help" class="helper-text">Please select a date at least 2 weeks from today</div>
             </div>
+
             <div class="form-group">
-              <label for="message">Message<span>*</span></label>
+              <label for="message">Tell Us About Your Event<span>*</span></label>
               <textarea
                 id="message"
                 name="message"
                 required
-                placeholder="Tell us more about your event"
+                placeholder="Share your vision, requirements, and any special requests"
+                maxlength="500"
+                aria-describedby="message-help"
               ></textarea>
+              <div id="message-help" class="helper-text">Include any specific details that will help us understand your needs</div>
+              <div class="character-count">0/500</div>
             </div>
-            <button type="submit" class="btn">Send Message</button>
+
+            <button type="submit" class="btn">
+              <span>Send Message</span>
+            </button>
           </form>
         </div>
 
         <!-- Contact Info -->
         <div class="contact-info">
-          <h2>Get in Touch</h2>
+          <h2>Ways to Connect</h2>
           <p>
-            <strong>Email:</strong>
-            <a href="mailto:info@photographycollective.com"
-              >info@photographycollective.com</a
-            >
+            <i class="fas fa-envelope"></i>
+            <span>
+              <strong>Email Us:</strong><br>
+              <a href="mailto:info@photographycollective.com">info@photographycollective.com</a>
+            </span>
           </p>
           <p>
-            <strong>Phone:</strong> <a href="tel:+1234567890">(123) 456-7890</a>
+            <i class="fas fa-phone"></i>
+            <span>
+              <strong>Call Us:</strong><br>
+              <a href="tel:+1234567890">(123) 456-7890</a>
+            </span>
           </p>
           <p>
-            <strong>WhatsApp:</strong>
-            <a href="https://wa.me/1234567890" target="_blank">Chat with us</a>
+            <i class="fab fa-whatsapp"></i>
+            <span>
+              <strong>WhatsApp:</strong><br>
+              <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">Message us on WhatsApp</a>
+            </span>
           </p>
+          <p>
+            <i class="far fa-clock"></i>
+            <span>
+              <strong>Response Time:</strong><br>
+              We typically respond within 24 hours
+            </span>
+          </p>
+          
           <!-- Social Media Links -->
           <div class="social-media">
-            <a href="#" aria-label="Facebook">
-              <i class="fab fa-facebook"></i>
+            <a href="#" aria-label="Follow us on Facebook" title="Facebook">
+              <i class="fab fa-facebook-f"></i>
             </a>
-            <a href="#" aria-label="Instagram">
+            <a href="#" aria-label="Follow us on Instagram" title="Instagram">
               <i class="fab fa-instagram"></i>
             </a>
-            <!-- Add more social media icons as needed -->
+            <a href="#" aria-label="Follow us on Twitter" title="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" aria-label="Follow us on LinkedIn" title="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Form Overlay -->
+    <div class="form-overlay">
+      <div class="loading-spinner"></div>
+    </div>
+
     <!-- Footer Component -->
     <footer-component></footer-component>
-    <!-- Link to JavaScript file -->
+
+    <!-- Scripts -->
     <script src="js/components.js" defer></script>
     <script src="js/contact.js" defer></script>
   </body>

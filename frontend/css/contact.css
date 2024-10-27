@@ -13,21 +13,29 @@ body {
 
 /* Hero Section */
 .contact-hero {
-  background: url("images/contact-hero.jpg") no-repeat center center/cover;
+  background: linear-gradient(45deg, #1a1a1a, #333);
   color: #fff;
   text-align: center;
-  padding: 100px 0;
+  padding: 120px 0;
   position: relative;
+  overflow: hidden;
 }
 
-.contact-hero::after {
+.contact-hero::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: url("../assets/imgs/placeholders/contact-pattern.svg") repeat;
+  opacity: 0.1;
+  animation: slide 20s linear infinite;
+}
+
+@keyframes slide {
+  from { background-position: 0 0; }
+  to { background-position: 100% 100%; }
 }
 
 .contact-hero .container {
@@ -36,107 +44,178 @@ body {
 }
 
 .contact-hero h1 {
-  font-size: 48px;
+  font-size: clamp(36px, 5vw, 48px);
   margin-bottom: 20px;
+  letter-spacing: 1px;
+  animation: fadeInDown 0.8s ease-out;
 }
 
 .contact-hero p {
-  font-size: 24px;
+  font-size: clamp(18px, 3vw, 24px);
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+  animation: fadeInUp 0.8s ease-out;
 }
 
 /* Contact Section */
 .contact-section {
   padding: 80px 0;
+  background: #f9f9f9;
 }
 
 .contact-section .container {
   display: flex;
   flex-wrap: wrap;
+  gap: 40px;
   justify-content: space-between;
 }
 
 .contact-form-container {
   flex: 1 1 600px;
-  margin-right: 20px;
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.contact-form-container:hover {
+  transform: translateY(-5px);
 }
 
 .contact-info {
   flex: 1 1 300px;
-  margin-left: 20px;
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
 }
 
 .contact-info h2 {
   font-size: 28px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.contact-info h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: #333;
 }
 
 .contact-info p {
   font-size: 18px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .contact-info a {
   color: #333;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .contact-info a:hover {
-  text-decoration: underline;
+  color: #666;
 }
 
 .social-media {
-  margin-top: 20px;
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
 }
 
 .social-media a {
-  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
 }
 
-.social-media img {
-  width: 32px;
-  height: 32px;
+.social-media a:hover {
+  background: #333;
+  color: #fff;
+  transform: translateY(-3px);
 }
 
 /* Contact Form */
 #contact-form {
   display: flex;
   flex-direction: column;
+  gap: 20px;
 }
 
 .form-group {
-  margin-bottom: 20px;
+  position: relative;
 }
 
 .form-group label {
   font-size: 16px;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   display: block;
+  font-weight: 500;
 }
 
 .form-group label span {
-  color: red;
+  color: #ff4444;
+  margin-left: 4px;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
   width: 100%;
-  padding: 10px;
+  padding: 12px 16px;
   font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: 2px solid #eee;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background: #f9f9f9;
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
   border-color: #333;
+  background: #fff;
   outline: none;
+  box-shadow: 0 0 0 3px rgba(51,51,51,0.1);
+}
+
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+  border-color: #666;
 }
 
 .form-group textarea {
   resize: vertical;
-  min-height: 100px;
+  min-height: 120px;
+}
+
+.form-group .helper-text {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+}
+
+.form-group .character-count {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: 12px;
+  color: #666;
 }
 
 .btn {
@@ -145,12 +224,88 @@ body {
   color: #fff;
   font-size: 18px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .btn:hover {
-  background: #555;
+  background: #444;
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn.loading {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.btn.loading::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 0.8s linear infinite;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@keyframes spin {
+  to { transform: translateY(-50%) rotate(360deg); }
+}
+
+/* Form Validation Styles */
+.form-group.error input,
+.form-group.error select,
+.form-group.error textarea {
+  border-color: #ff4444;
+}
+
+.form-group.success input,
+.form-group.success select,
+.form-group.success textarea {
+  border-color: #00c851;
+}
+
+.error-message {
+  color: #ff4444;
+  font-size: 14px;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsive Design */
@@ -162,9 +317,61 @@ body {
   .contact-form-container,
   .contact-info {
     margin: 0;
+    padding: 20px;
   }
 
   .contact-info {
-    margin-top: 40px;
+    margin-top: 20px;
   }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 16px;
+    padding: 15px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+/* Accessibility Improvements */
+.form-group input:focus-visible,
+.form-group select:focus-visible,
+.form-group textarea:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid #333;
+  outline-offset: 2px;
+}
+
+/* Loading Overlay */
+.form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255,255,255,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.form-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #333;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
 }
