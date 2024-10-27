@@ -1,60 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Collections - Photography Collective</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Link to external CSS -->
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/collections.css">
-  <link rel="stylesheet" href="css/components.css">
+    <meta charset="UTF-8">
+    <title>Collections - Photography Collective</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/collections.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Header Component -->
-  <header-component></header-component>
+    <!-- Header Component -->
+    <header-component></header-component>
 
-  <!-- Collections Hero Section -->
-  <section class="collections-hero">
-    <div class="container">
-      <h1>Our Collections</h1>
-      <p>Explore our portfolio of captured moments.</p>
+    <!-- Collections Hero Section -->
+    <section class="collections-hero">
+        <div class="container">
+            <h1>Our Collections</h1>
+            <p>Explore our portfolio of captured moments.</p>
+        </div>
+    </section>
+
+    <!-- Categories Filter -->
+    <section class="categories">
+        <div class="container">
+            <button class="category-btn active" data-category="all">All Collections</button>
+            <button class="category-btn" data-category="sports">Sports</button>
+            <button class="category-btn" data-category="social">Social Events</button>
+            <button class="category-btn" data-category="graduations">Graduations</button>
+        </div>
+    </section>
+
+    <!-- Collections Grid -->
+    <section class="collections-grid">
+        <div class="container">
+            <div class="grid-container" id="collections-container">
+                <!-- Cards will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Collection Details Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="modal-title">Event Title</h2>
+            <p id="modal-description">Event description goes here.</p>
+            <a href="#" class="btn" id="modal-view-more">View Full Collection</a>
+        </div>
     </div>
-  </section>
 
-  <!-- Categories Filter -->
-  <section class="categories">
-    <div class="container">
-      <button class="category-btn active" data-category="all">All</button>
-      <button class="category-btn" data-category="sports">Sports</button>
-      <button class="category-btn" data-category="social">Social Events</button>
-      <button class="category-btn" data-category="graduations">Graduations</button>
-      <!-- Add more categories as needed -->
-    </div>
-  </section>
-
-  <!-- Wheel Carousel Gallery -->
-  <section class="wheel-carousel">
-    <div class="carousel-container">
-      <div class="carousel">
-        <!-- Carousel items will be injected here -->
-      </div>
-    </div>
-  </section>
-
-  <!-- Collection Details Modal -->
-  <div class="modal" id="modal">
-    <div class="modal-content">
-      <span class="close-btn">&times;</span>
-      <img id="modal-image" src="" alt="Collection Image">
-      <h2 id="modal-title">Event Title</h2>
-      <p id="modal-description">Event description goes here.</p>
-      <a href="#" class="btn" id="modal-view-more">View Full Collection</a>
-    </div>
-  </div>
-
-  <!-- Footer Component -->
-  <footer-component></footer-component>
-  <script src="js/components.js" defer></script>
-  <script src="js/collections.js" defer></script>
+    <!-- Footer Component -->
+    <footer-component></footer-component>
+    <script src="js/components.js" defer></script>
+    <script src="js/collections.js" defer></script>
 </body>
 </html>

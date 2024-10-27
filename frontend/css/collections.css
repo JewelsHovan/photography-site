@@ -3,208 +3,270 @@ body {
     font-family: 'Roboto', sans-serif;
     color: #333;
     margin: 0;
-  }
+    background-color: #ffffff;
+    line-height: 1.6;
+}
   
-  .container {
+.container {
     width: 90%;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: auto;
     text-align: center;
-  }
-  
-  /* Collections Hero Section */
-  .collections-hero {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
-    color: #fff;
-    padding: 100px 0;
+}
+
+/* Collections Hero Section */
+.collections-hero {
+    background: #fafafa;
+    color: #333;
+    padding: 120px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.collections-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+.collections-hero p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Categories Filter */
+.categories {
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.category-btn {
+    padding: 8px 20px;
+    margin: 0 4px;
+    background: transparent;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: all 0.2s ease;
     position: relative;
-  }
-  
-  .collections-hero::after {
+}
+
+.category-btn::after {
     content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 20px;
+    right: 20px;
+    height: 2px;
+    background: #333;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.category-btn:hover {
+    color: #333;
+}
+
+.category-btn.active {
+    color: #333;
+    font-weight: 500;
+}
+
+.category-btn.active::after {
+    opacity: 1;
+}
+
+/* Collections Grid */
+.collections-grid {
+    padding: 40px 0;
+    background: #fff;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+    padding: 0;
+}
+
+.collection-card {
+    background: #fff;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.image-container {
+    position: relative;
+    padding-top: 75%;
+    background: #f5f5f5;
+    overflow: hidden;
+}
+
+.card-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.collection-card:hover .card-image {
+    transform: scale(1.03);
+}
+
+.card-content {
+    padding: 16px 0;
+    text-align: left;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0 0 8px 0;
+    color: #333;
+}
+
+.card-description {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+.card-overlay {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-  }
-  
-  .collections-hero .container {
-    position: relative;
-    z-index: 1;
-  }
-  
-  .collections-hero h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-  }
-  
-  .collections-hero p {
-    font-size: 24px;
-  }
-  
-  /* Categories Filter */
-  .categories {
-    padding: 20px 0;
-  }
-  
-  .category-btn {
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.collection-card:hover .card-overlay {
+    opacity: 1;
+}
+
+.view-collection-btn {
     padding: 10px 20px;
-    margin: 5px;
-    background: #f4f4f4;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .category-btn.active,
-  .category-btn:hover {
-    background: #333;
-    color: #fff;
-  }
-  
-  /* Wheel Carousel */
-  .carousel-container {
-    perspective: 1500px;
-    overflow: hidden;
-    height: 80vh; /* Use viewport height instead of fixed pixels */
-    position: relative;
-  }
-  
-  .carousel {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    transform-style: preserve-3d;
-    transition: transform 0.5s;
-  }
-  
-  .carousel-item {
-    position: absolute;
-    width: 300px; /* Default size for mobile */
-    height: 450px; /* Default size for mobile */
-    left: 50%;
-    top: 50%;
-    margin-left: -150px;
-    margin-top: -225px;
-    transition: transform 0.5s, opacity 0.5s;
-    cursor: pointer;
-  }
-  
-  .carousel-item img {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    object-fit: cover;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-  }
-  
-  /* Add hover effect */
-  .carousel-item:hover {
-    transform: scale(1.05) translateZ(50px);
-  }
-  
-  /* Media query for larger screens */
-  @media (min-width: 768px) {
-    .carousel-item {
-      width: 400px;
-      height: 600px;
-      margin-left: -200px;
-      margin-top: -300px;
-    }
-  }
-  
-  /* Modal Styles */
-  .modal {
+    background: #fff;
+    color: #333;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.collection-card:hover .view-collection-btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Modal Styles */
+.modal {
     display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    overflow: auto;
+    background-color: rgba(255, 255, 255, 0.95);
     z-index: 1000;
-  }
-  
-  .modal-content {
+}
+
+.modal-content {
     background-color: #fff;
     margin: 5% auto;
-    padding: 20px;
-    width: 80%;
-    max-width: 800px;
+    padding: 40px;
+    width: 90%;
+    max-width: 600px;
     position: relative;
-    text-align: center;
-  }
-  
-  .close-btn {
+    border: 1px solid #eee;
+}
+
+.close-btn {
     position: absolute;
-    top: 15px;
-    right: 25px;
-    color: #aaa;
-    font-size: 30px;
-    font-weight: bold;
+    top: 24px;
+    right: 24px;
+    color: #666;
+    font-size: 24px;
     cursor: pointer;
-  }
-  
-  .close-btn:hover {
-    color: #000;
-  }
-  
-  .modal img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-  }
-  
-  .modal h2 {
-    font-size: 28px;
-    margin-bottom: 10px;
-  }
-  
-  .modal p {
-    font-size: 18px;
-    margin-bottom: 20px;
-  }
-  
-  .modal .btn {
-    padding: 10px 20px;
+    transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+    color: #333;
+}
+
+.modal h2 {
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+.modal p {
+    font-size: 1rem;
+    margin-bottom: 24px;
+    color: #666;
+}
+
+.modal .btn {
+    display: inline-block;
+    padding: 12px 24px;
     background: #333;
     color: #fff;
     text-decoration: none;
-    border-radius: 5px;
-  }
-  
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    .carousel-item {
-      width: 200px;
-      height: 300px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.modal .btn:hover {
+    background: #444;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .collections-hero h1 {
+        font-size: 2rem;
     }
-  
-    .modal-content {
-      width: 90%;
+    
+    .collections-hero p {
+        font-size: 1rem;
+        padding: 0 16px;
     }
-  }
-
-  /* Responsive styles for category buttons */
-  .categories {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-
-  .category-btn {
-    padding: 8px 16px;
-    font-size: 14px;
-  }
-
-  @media (min-width: 768px) {
+    
     .category-btn {
-      padding: 10px 20px;
-      font-size: 16px;
+        padding: 8px 16px;
+        font-size: 0.9rem;
     }
-  }
+
+    .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .card-description {
+        font-size: 0.85rem;
+    }
+}
