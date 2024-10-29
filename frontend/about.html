@@ -1,70 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>About Us - Photography Collective</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Link to external CSS -->
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/about.css">
-  <link rel="stylesheet" href="css/components.css">
-  <!-- Link to JavaScript file -->
-  <script src="js/about.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Photography Collective's story, our founders, and our passion for capturing memorable moments at university events.">
+    <title>About Us - Photography Collective</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/components.css">
+    <script src="js/about.js" defer></script>
 </head>
 <body>
-  <!-- Header Component -->
-  <header-component></header-component>
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+    
+    <!-- Header Component -->
+    <header-component></header-component>
 
-  <!-- Hero Section -->
-  <section class="about-hero">
-    <div class="container">
-      <h1>Our Story</h1>
-      <p>
-        At Photography Collective, we believe in capturing the essence of every moment. Our passion for photography drives us to deliver exceptional experiences for our clients.
-      </p>
-    </div>
-  </section>
+    <main id="main-content">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Breadcrumb" class="breadcrumb">
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li aria-current="page">About Us</li>
+            </ol>
+        </nav>
 
-  <!-- Meet the Founders Section -->
-  <section class="founders">
-    <!-- Founder 1 -->
-    <div class="founder">
-      <div class="founder-text">
-        <h2>Jane Doe</h2>
-        <h3>Co-founder & Lead Photographer</h3>
-        <p>
-          Jane brings over a decade of experience in capturing the vibrancy of university events. Her keen eye and artistic approach ensure that every photo tells a unique story.
-        </p>
-      </div>
-      <div class="founder-image">
-        <img src="https://placeholder.pics/svg/300x200" alt="Portrait of Founder 1">
-      </div>
-    </div>
+        <!-- Hero Section -->
+        <section class="about-hero" aria-labelledby="hero-title">
+            <div class="container">
+                <h1 id="hero-title">Our Story</h1>
+                <p>
+                    At Photography Collective, we believe in capturing the essence of every moment. Our passion for photography drives us to deliver exceptional experiences for our clients.
+                </p>
+            </div>
+        </section>
 
-    <!-- Founder 2 -->
-    <div class="founder reverse">
-      <div class="founder-text">
-        <h2>John Smith</h2>
-        <h3>Co-founder & Creative Director</h3>
-        <p>
-          John's innovative vision and creative direction have set new standards in event photography. His dedication to excellence is evident in every project he undertakes.
-        </p>
-      </div>
-      <div class="founder-image">
-        <img src="https://placeholder.pics/svg/300x200" alt="Portrait of Founder 2">
-      </div>
-    </div>
-  </section>
+        <!-- Meet the Founders Section -->
+        <section class="founders" aria-labelledby="founders-title">
+            <div class="container">
+                <h2 id="founders-title" class="visually-hidden">Meet Our Founders</h2>
+                
+                <!-- Founder 1 -->
+                <article class="founder" aria-labelledby="founder1-name">
+                    <div class="founder-text">
+                        <h2 id="founder1-name">Jane Doe</h2>
+                        <h3>Co-founder & Lead Photographer</h3>
+                        <p>
+                            Jane brings over a decade of experience in capturing the vibrancy of university events. Her keen eye and artistic approach ensure that every photo tells a unique story.
+                        </p>
+                    </div>
+                    <div class="founder-image" aria-hidden="true">
+                        <img src="assets/imgs/placeholders/founder1.jpg" 
+                             alt="Jane Doe, Co-founder & Lead Photographer"
+                             loading="lazy"
+                             width="300"
+                             height="200">
+                    </div>
+                </article>
 
-  <!-- Call to Action Section -->
-  <section class="about-cta">
-    <div class="container">
-      <h2>Let's Capture Your Event Together</h2>
-      <a href="contact.html" class="btn">Get in Touch</a>
-    </div>
-  </section>
-  <!-- Footer Component -->
-  <footer-component></footer-component>
-  <script src="js/components.js" defer></script>
+                <!-- Founder 2 -->
+                <article class="founder reverse" aria-labelledby="founder2-name">
+                    <div class="founder-text">
+                        <h2 id="founder2-name">John Smith</h2>
+                        <h3>Co-founder & Creative Director</h3>
+                        <p>
+                            John's innovative vision and creative direction have set new standards in event photography. His dedication to excellence is evident in every project he undertakes.
+                        </p>
+                    </div>
+                    <div class="founder-image" aria-hidden="true">
+                        <img src="assets/imgs/placeholders/founder2.jpg"
+                             alt="John Smith, Co-founder & Creative Director"
+                             loading="lazy"
+                             width="300"
+                             height="200">
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials" aria-labelledby="testimonials-title">
+            <div class="container">
+                <h2 id="testimonials-title">What Our Clients Say</h2>
+                <div class="testimonials-grid">
+                    <blockquote class="testimonial">
+                        <p>"The Photography Collective team captured our graduation ceremony beautifully. Every shot tells a story!"</p>
+                        <footer>
+                            <cite>Sarah Johnson, Class of 2023</cite>
+                        </footer>
+                    </blockquote>
+                    <blockquote class="testimonial">
+                        <p>"Professional, creative, and incredibly talented. They made our university gala truly memorable."</p>
+                        <footer>
+                            <cite>Prof. Michael Brown, Event Coordinator</cite>
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="about-cta" aria-labelledby="cta-title">
+            <div class="container">
+                <h2 id="cta-title">Let's Capture Your Event Together</h2>
+                <a href="contact.html" class="btn" role="button">Get in Touch</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Component -->
+    <footer-component></footer-component>
+    <script src="js/components.js" defer></script>
 </body>
 </html>
